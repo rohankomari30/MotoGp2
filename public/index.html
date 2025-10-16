@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoGP Hub - Your Ultimate MotoGP Source</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>🏍️ MotoGP Hub</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#riders" class="nav-link">Riders</a></li>
+                    <li><a href="#teams" class="nav-link">Teams</a></li>
+                    <li><a href="#rankings" class="nav-link">Rankings</a></li>
+                    <li><a href="#sponsors" class="nav-link">Sponsors</a></li>
+                    <li><a href="#media" class="nav-link">Media</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to MotoGP Hub</h1>
+            <p class="hero-subtitle">Your Ultimate Source for MotoGP Racing</p>
+            <button class="btn-primary" onclick="scrollToSection('riders')">Explore Now</button>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 class="stat-number" id="total-riders">0</h3>
+                    <p class="stat-label">Active Riders</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" id="total-teams">0</h3>
+                    <p class="stat-label">Teams</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number">2024</h3>
+                    <p class="stat-label">Season</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number">20</h3>
+                    <p class="stat-label">Races</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Riders Section -->
+    <section id="riders" class="section riders-section">
+        <div class="container">
+            <h2 class="section-title">Top Riders</h2>
+            <div class="section-subtitle">Meet the world's best motorcycle racers</div>
+            <div id="riders-grid" class="riders-grid">
+                <div class="loading">Loading riders...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Section -->
+    <section id="teams" class="section teams-section">
+        <div class="container">
+            <h2 class="section-title">MotoGP Teams</h2>
+            <div class="section-subtitle">The constructors behind the speed</div>
+            <div id="teams-grid" class="teams-grid">
+                <div class="loading">Loading teams...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rankings Section -->
+    <section id="rankings" class="section rankings-section">
+        <div class="container">
+            <h2 class="section-title">Championship Standings</h2>
+            <div class="section-subtitle">2024 Season Rankings</div>
+            <div class="rankings-container">
+                <div class="rankings-header">
+                    <div class="rank-col">Pos</div>
+                    <div class="rider-col">Rider</div>
+                    <div class="team-col">Team</div>
+                    <div class="points-col">Points</div>
+                    <div class="wins-col">Wins</div>
+                    <div class="podiums-col">Podiums</div>
+                </div>
+                <div id="rankings-list" class="rankings-list">
+                    <div class="loading">Loading rankings...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="section sponsors-section">
+        <div class="container">
+            <h2 class="section-title">Our Sponsors</h2>
+            <div class="section-subtitle">Powering the sport we love</div>
+            <div id="sponsors-grid" class="sponsors-grid">
+                <div class="loading">Loading sponsors...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media" class="section media-section">
+        <div class="container">
+            <h2 class="section-title">Media Gallery</h2>
+            <div class="section-subtitle">Latest photos and videos</div>
+            <div class="media-grid">
+                <div class="media-card">
+                    <div class="media-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1558980664-769d59546b3d?w=800');">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <h3>2024 Season Highlights</h3>
+                    <p>Watch the best moments from this season</p>
+                </div>
+                <div class="media-card">
+                    <div class="media-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800');">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <h3>Race Day Action</h3>
+                    <p>Experience the thrill of MotoGP racing</p>
+                </div>
+                <div class="media-card">
+                    <div class="media-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800');">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <h3>Behind the Scenes</h3>
+                    <p>Go behind the scenes with the teams</p>
+                </div>
+                <div class="media-card">
+                    <div class="media-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800');">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <h3>Rider Interviews</h3>
+                    <p>Exclusive interviews with top riders</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MotoGP Hub</h3>
+                    <p>Your ultimate source for MotoGP racing information, stats, and updates.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#riders">Riders</a></li>
+                        <li><a href="#teams">Teams</a></li>
+                        <li><a href="#rankings">Rankings</a></li>
+                        <li><a href="#sponsors">Sponsors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘 Facebook</a>
+                        <a href="#" class="social-link">🐦 Twitter</a>
+                        <a href="#" class="social-link">📷 Instagram</a>
+                        <a href="#" class="social-link">▶️ YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MotoGP Hub. All rights reserved. Built with MEAN Stack.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const path = require('path');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// MongoDB Connection
+mongoose.connect('mongodb+srv://23eg106b30_db_user:Wgyi9OJ9HUTqmUh4@cluster0.tqwtezl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB connected successfully'))
+.catch(err => console.log('MongoDB connection error:', err));
+
+// Import Routes
+const riderRoutes = require('./routes/riders');
+const teamRoutes = require('./routes/teams');
+const rankingRoutes = require('./routes/rankings');
+const sponsorRoutes = require('./routes/sponsors');
+
+// Use Routes
+app.use('/api/riders', riderRoutes);
+app.use('/api/teams', teamRoutes);
+app.use('/api/rankings', rankingRoutes);
+app.use('/api/sponsors', sponsorRoutes);
+
+// Root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`MotoGP Hub server running on port ${PORT}`);
+});
