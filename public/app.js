@@ -44,6 +44,8 @@ class SPARouter {
         const view = this.routes[path] || this.homeView;
         view.call(this);
         this.updateActiveNav(path);
+        // Scroll to top when navigating to a new page
+        window.scrollTo(0, 0);
     }
 
     updateActiveNav(currentPath) {
@@ -342,7 +344,7 @@ class SPARouter {
                             <div class="video-container">
                                 <iframe
                                     class="highlight-video"
-                                    src="https://www.youtube.com/embed/h6QFIj_uBN4?si=AA8aXT-ruMtEO5qq"
+                                    src="https://www.youtube.com/embed/swjZZrYroyE"
                                     title="2024 MotoGP Season Highlights"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
