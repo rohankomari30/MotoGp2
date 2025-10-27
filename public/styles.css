@@ -90,8 +90,8 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('images/riders/banner.webp') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -170,9 +170,185 @@ body {
     letter-spacing: 1px;
 }
 
+/* Main Content */
+.main-content {
+    margin-top: 60px; /* Account for fixed header */
+}
+
 /* Section Styles */
 .section {
     padding: 5rem 0;
+}
+
+/* About MotoGP Section */
+.about-motogp-section {
+    background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+    padding: 5rem 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.motogp-facts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.fact-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.fact-number {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.fact-label {
+    font-size: 1rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Page Info Section */
+.page-info {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.info-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.info-text p {
+    margin-bottom: 1.5rem;
+}
+
+.info-text strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.info-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.info-number {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.info-label {
+    font-size: 0.9rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Shortcuts Section */
+.shortcuts-section {
+    background: var(--white);
+    padding: 5rem 0;
+}
+
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.shortcut-card {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.shortcut-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.shortcut-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.shortcut-card h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.shortcut-card p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .section-title {
@@ -513,7 +689,7 @@ body {
 
 .media-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
@@ -528,6 +704,81 @@ body {
 .media-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.media-card.video-card {
+    grid-column: span 2;
+}
+
+@media (max-width: 1400px) {
+    .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .media-card.video-card {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+    .media-card.video-card {
+        grid-column: span 1;
+    }
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: var(--secondary-color);
+    overflow: hidden;
+}
+
+.highlight-video {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 3rem 2rem 2rem;
+    color: var(--white);
+}
+
+.video-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.video-description {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.media-info {
+    padding: 1.5rem;
+}
+
+.media-info h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.media-info p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .media-thumbnail {
@@ -670,7 +921,30 @@ body {
     .riders-grid,
     .teams-grid,
     .sponsors-grid,
-    .media-grid {
+    .media-grid,
+    .shortcuts-grid,
+    .about-content,
+    .info-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .media-card.video-card {
+        grid-column: span 1;
+    }
+
+    .video-container {
+        height: 250px;
+    }
+
+    .video-title {
+        font-size: 1.3rem;
+    }
+
+    .video-description {
+        font-size: 0.9rem;
+    }
+
+    .motogp-facts {
         grid-template-columns: 1fr;
     }
     

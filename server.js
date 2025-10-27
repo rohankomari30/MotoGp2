@@ -35,8 +35,11 @@ app.use('/api/teams', teamRoutes);
 app.use('/api/rankings', rankingRoutes);
 app.use('/api/sponsors', sponsorRoutes);
 
-// Root route
-app.get('/', (req, res) => {
+// SPA fallback: Serve index.html for all non-API routes
+app.get('*', (req, res) => {
+  if (req.path.startsWith('/api')) {
+    return res.status(404).json({ error: 'API endpoint not found' });
+  }
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
